@@ -34,4 +34,7 @@ def calculate_delimited_string_sum(string: str, delimiter: str) -> int:
         :return: sum of numbers passed in string
     """
     numbers = list(map(int, string.split(delimiter)))
+    if any(number < 0 for number in numbers) > 0:
+        raise ValueError("negatives not allowed: " +
+                         str(list(filter(lambda x: x < 0, numbers))))
     return sum(numbers)
