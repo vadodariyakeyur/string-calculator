@@ -11,5 +11,12 @@ class StringCalculatorTests(unittest.TestCase):
         result = string_calculator("7")
         self.assertEqual(result, 7)
 
+    def test_string_calculator_should_add_two_numbers(self) -> None:
+        result = string_calculator("21,19")
+        self.assertEqual(result, 40)
+
+        result = string_calculator("15,10")
+        self.assertEqual(result, 25)
+
 if __name__ == '__main__':
     unittest.main()
