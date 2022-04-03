@@ -6,5 +6,15 @@ def string_calculator(numbers: str) -> int:
     """
     if len(numbers) == 0:
         return 0
+    total = calculate_delimited_string_sum(numbers, ',') 
+    return total
 
-    return int(numbers)
+def calculate_delimited_string_sum(string: str, delimiter: str) -> int:
+    """
+        To calculate sum of a delimiter seperated string
+        :string: string of numbers
+        :delimiter: string to used as delimiter
+        :return: sum of numbers passed in string
+    """
+    numbers = list(map(int, string.split(delimiter)))
+    return sum(numbers)
