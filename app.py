@@ -6,6 +6,7 @@ def string_calculator(numbers: str) -> int:
     """
     if len(numbers) == 0:
         return 0
+    numbers = numbers.replace('\n', ',').strip(',')
     total = calculate_delimited_string_sum(numbers, ',') 
     return total
 
