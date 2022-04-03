@@ -4,5 +4,7 @@ def string_calculator(numbers: str) -> int:
         :numbers: delimited string of numbers
         :return: sum of numbers passed in delimited string
     """
+    if len(numbers) == 0:
+        return 0
 
     return
