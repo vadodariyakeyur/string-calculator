@@ -18,5 +18,12 @@ class StringCalculatorTests(unittest.TestCase):
         result = string_calculator("15,10")
         self.assertEqual(result, 25)
 
+    def test_string_calculator_should_add_multiple_numbers(self) -> None:
+        result = string_calculator("4,9,11")
+        self.assertEqual(result, 24)
+
+        result = string_calculator("17,4")
+        self.assertEqual(result, 21)
+
 if __name__ == '__main__':
     unittest.main()
