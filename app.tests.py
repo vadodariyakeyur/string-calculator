@@ -24,6 +24,16 @@ class StringCalculatorTests(unittest.TestCase):
 
         result = string_calculator("17,4")
         self.assertEqual(result, 21)
+    
+    def test_string_calculator_should_allow_new_line_character_delimiter(self) -> None:
+        result = string_calculator("5\n10")
+        self.assertEqual(result, 15)
+
+        result = string_calculator("4\n6,7")
+        self.assertEqual(result, 17)
+
+        result = string_calculator("\n5,3\n4\n")
+        self.assertEqual(result, 12)
 
 if __name__ == '__main__':
     unittest.main()
