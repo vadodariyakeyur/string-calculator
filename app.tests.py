@@ -48,6 +48,14 @@ class StringCalculatorTests(unittest.TestCase):
 
         result = string_calculator("//#*o\n4#*o2#*o7")
         self.assertEqual(result, 13)
+    
+    def test_string_calculator_negative_number_exception(self) -> None:
+        result=None
+        try:
+            string_calculator("1\n18\n-33,7,-9")
+        except ValueError as e:
+            result = str(e)
+        self.assertEqual(result,"negatives not allowed: [-33, -9]")
 
 if __name__ == '__main__':
     unittest.main()
