@@ -7,4 +7,4 @@ def string_calculator(numbers: str) -> int:
     if len(numbers) == 0:
         return 0
 
-    return
+    return int(numbers)
