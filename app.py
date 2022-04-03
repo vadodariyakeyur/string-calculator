@@ -4,11 +4,27 @@ def string_calculator(numbers: str) -> int:
         :numbers: delimited string of numbers
         :return: sum of numbers passed in delimited string
     """
+    numbers = sanitize_delimited_string(numbers)
     if len(numbers) == 0:
         return 0
-    numbers = numbers.replace('\n', ',').strip(',')
-    total = calculate_delimited_string_sum(numbers, ',') 
-    return total
+
+    return calculate_delimited_string_sum(numbers, ',')
+
+
+def sanitize_delimited_string(string: str) -> str:
+    """
+        To clean the delimited string to only contain , as delimiter
+        :string: delimited string of numbers
+        :return: delimited string with only , as delimiter
+    """
+    delimiter = ','
+    if string.startswith("//"):
+        end_index = string.find('\n')
+        delimiter = string[2:end_index]
+        string = string[end_index+1:]
+
+    return string.replace('\n', ',').replace(delimiter, ',').strip(',')
+
 
 def calculate_delimited_string_sum(string: str, delimiter: str) -> int:
     """
